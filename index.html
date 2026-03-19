@@ -3,104 +3,512 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>system8bit - Portfolio</title>
+  <title>★☆ system8bit's Homepage ☆★</title>
   <style>
+    /* ===== Reset & Base ===== */
     * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #0d1117;
-      color: #e6edf3;
+      font-family: "MS PGothic", "MS Gothic", "Osaka", "Hiragino Kaku Gothic Pro", monospace;
+      background-color: #000011;
+      background-image:
+        radial-gradient(1px 1px at 10% 15%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 25% 80%, #ccccff 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 50% 10%, #ffffcc 50%, transparent 100%),
+        radial-gradient(1px 1px at 75% 60%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 90% 30%, #ccccff 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 15% 50%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 40% 40%, #ffffcc 50%, transparent 100%),
+        radial-gradient(1px 1px at 60% 85%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 85% 90%, #ccccff 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 5% 95%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 33% 22%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 66% 44%, #ffffcc 50%, transparent 100%),
+        radial-gradient(1px 1px at 80% 10%, #fff 50%, transparent 100%),
+        radial-gradient(1px 1px at 20% 70%, #ccccff 50%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 55% 55%, #fff 50%, transparent 100%);
+      background-size: 300px 300px;
+      color: #ffff99;
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      line-height: 1.6;
+      font-size: 14px;
     }
-    header {
+
+    a { color: #66ccff; }
+    a:visited { color: #cc99ff; }
+    a:hover { color: #ff99cc; }
+
+    /* ===== Marquee Banner ===== */
+    .marquee-container {
+      background: linear-gradient(90deg, #000066, #330066, #000066);
+      border-top: 2px solid #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+      padding: 8px 0;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .marquee-text {
+      display: inline-block;
+      animation: marquee 12s linear infinite;
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffcc00;
+      text-shadow: 0 0 8px #ffcc00, 2px 2px 0 #663300;
+      letter-spacing: 4px;
+    }
+
+    @keyframes marquee {
+      0%   { transform: translateX(100vw); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* ===== Title Area ===== */
+    .title-area {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 24px 16px;
+      border-bottom: 2px dashed #336699;
     }
-    header h1 {
-      font-size: 2.4rem;
+
+    .title-area h1 {
+      font-size: 28px;
+      color: #66ffcc;
+      text-shadow: 2px 2px 0 #003333;
+      letter-spacing: 2px;
+    }
+
+    .title-area .subtitle {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 4px;
+    }
+
+    .title-area .last-update {
+      font-size: 11px;
+      color: #669999;
+      margin-top: 8px;
+    }
+
+    /* ===== Frame Layout ===== */
+    .frame-container {
+      display: flex;
+      min-height: calc(100vh - 180px);
+      border: 3px ridge #336699;
+      margin: 0;
+    }
+
+    /* ===== Sidebar (Menu) ===== */
+    .sidebar {
+      width: 180px;
+      min-width: 180px;
+      background: #0a0a2e;
+      border-right: 3px ridge #336699;
+      padding: 12px 0;
+    }
+
+    .sidebar .menu-title {
+      text-align: center;
+      font-size: 13px;
+      color: #ffcc00;
+      padding: 8px;
+      border-bottom: 1px dotted #336699;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding: 0 8px;
+    }
+
+    .sidebar li {
+      margin-bottom: 4px;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 6px 10px;
+      color: #66ccff;
+      text-decoration: none;
+      font-size: 13px;
+      border: 1px solid transparent;
+      transition: none;
+    }
+
+    .sidebar a:hover {
+      background: #000066;
+      border: 1px dotted #6699ff;
+      color: #ffcc66;
+    }
+
+    .sidebar a::before {
+      content: "■ ";
+      color: #ff6699;
+      font-size: 10px;
+    }
+
+    .sidebar .menu-icon {
+      text-align: center;
+      padding: 16px 8px;
+      border-top: 1px dotted #336699;
+      margin-top: 16px;
+    }
+
+    .sidebar .menu-icon img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .sidebar .mail-link {
+      display: block;
+      text-align: center;
+      font-size: 11px;
+      color: #ff99cc;
+      margin-top: 12px;
+    }
+
+    /* ===== Main Content ===== */
+    .main-content {
+      flex: 1;
+      padding: 20px 24px;
+      overflow-y: auto;
+    }
+
+    /* ===== Counter ===== */
+    .counter {
+      text-align: center;
+      margin-bottom: 24px;
+      padding: 12px;
+      border: 1px dashed #666699;
+      background: #0a0a1a;
+    }
+
+    .counter-text {
+      font-size: 13px;
+      color: #cc99ff;
+    }
+
+    .counter-num {
+      display: inline-block;
+      font-family: "Courier New", monospace;
+      font-size: 22px;
+      font-weight: bold;
+      color: #00ff66;
+      background: #001100;
+      border: 2px inset #336633;
+      padding: 2px 12px;
+      letter-spacing: 4px;
+      margin: 0 4px;
+      text-shadow: 0 0 6px #00ff66;
+    }
+
+    /* ===== Section ===== */
+    .section {
+      margin-bottom: 28px;
+    }
+
+    .section h2 {
+      font-size: 16px;
+      color: #ffcc66;
+      border-bottom: 2px solid #664400;
+      padding-bottom: 4px;
       margin-bottom: 12px;
     }
-    header p {
-      color: #8b949e;
-      font-size: 1.1rem;
+
+    .section h2::before {
+      content: "◆ ";
+      color: #ff6699;
     }
-    header a {
-      color: #58a6ff;
-      text-decoration: none;
+
+    .section p, .section li {
+      font-size: 13px;
+      color: #cccccc;
+      line-height: 1.8;
     }
-    header a:hover { text-decoration: underline; }
-    main {
+
+    /* ===== Profile ===== */
+    .profile-table {
+      border-collapse: collapse;
       width: 100%;
-      max-width: 720px;
-      padding: 0 20px 80px;
+      max-width: 420px;
+      font-size: 13px;
     }
-    h2 {
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid #21262d;
+
+    .profile-table th, .profile-table td {
+      border: 1px solid #333366;
+      padding: 6px 10px;
+      text-align: left;
     }
-    .tools {
-      display: grid;
-      gap: 16px;
+
+    .profile-table th {
+      background: #1a1a4e;
+      color: #ffcc99;
+      width: 100px;
+      white-space: nowrap;
     }
-    .card {
-      background: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 8px;
-      padding: 24px;
+
+    .profile-table td {
+      color: #cccccc;
+      background: #0d0d2b;
+    }
+
+    /* ===== Tools ===== */
+    .tools-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .tools-list li {
+      margin-bottom: 12px;
+      padding: 10px 14px;
+      border: 1px solid #333366;
+      background: #0d0d2b;
+    }
+
+    .tools-list li a {
+      font-size: 14px;
+      font-weight: bold;
       text-decoration: none;
-      color: inherit;
-      transition: border-color 0.2s;
     }
-    .card:hover { border-color: #58a6ff; }
-    .card h3 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: #58a6ff;
+
+    .tools-list li a:hover {
+      text-decoration: underline;
     }
-    .card p {
-      color: #8b949e;
-      font-size: 0.95rem;
-      line-height: 1.5;
+
+    .tools-list .tool-desc {
+      font-size: 12px;
+      color: #999999;
+      margin-top: 4px;
     }
+
+    .new-badge {
+      display: inline-block;
+      font-size: 10px;
+      color: #ff0000;
+      font-weight: bold;
+      animation: blink 1s step-end infinite;
+      margin-left: 6px;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    /* ===== Construction ===== */
+    .construction {
+      text-align: center;
+      padding: 20px;
+      border: 2px dashed #ffcc00;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 204, 0, 0.05) 10px,
+        rgba(255, 204, 0, 0.05) 20px
+      );
+      margin-top: 12px;
+    }
+
+    .construction-text {
+      font-size: 18px;
+      color: #ffcc00;
+      font-weight: bold;
+      letter-spacing: 4px;
+    }
+
+    .construction-sub {
+      font-size: 11px;
+      color: #999966;
+      margin-top: 6px;
+    }
+
+    /* ===== Link Section ===== */
+    .link-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .link-list li {
+      padding: 4px 0;
+      font-size: 13px;
+    }
+
+    .link-list li::before {
+      content: "→ ";
+      color: #ff6699;
+    }
+
+    /* ===== Separator ===== */
+    .hr-retro {
+      border: none;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #336699, #6633cc, #336699, transparent);
+      margin: 20px 0;
+    }
+
+    /* ===== Footer ===== */
     footer {
-      margin-top: auto;
-      padding: 24px;
-      color: #484f58;
-      font-size: 0.85rem;
+      text-align: center;
+      padding: 16px;
+      border-top: 2px dashed #336699;
+      font-size: 11px;
+      color: #666699;
+    }
+
+    footer a {
+      color: #6699cc;
+      font-size: 11px;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 600px) {
+      .frame-container {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        min-width: auto;
+        border-right: none;
+        border-bottom: 3px ridge #336699;
+        padding: 8px 0;
+      }
+      .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px;
+      }
+      .sidebar .menu-icon { display: none; }
+      .main-content {
+        padding: 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>system8bit</h1>
-    <p><a href="https://github.com/system8bit" target="_blank" rel="noopener">GitHub</a></p>
-  </header>
-  <main>
-    <h2>Tools</h2>
-    <div class="tools">
-      <a class="card" href="https://system8bit.github.io/password-generation/" target="_blank" rel="noopener">
-        <h3>Password Generator</h3>
-        <p>パスワード生成ツール</p>
-      </a>
-      <a class="card" href="https://system8bit.github.io/qr-go/" target="_blank" rel="noopener">
-        <h3>QR Go</h3>
-        <p>QRコード生成ツール</p>
-      </a>
-      <a class="card" href="https://system8bit.github.io/lofi-generator/" target="_blank" rel="noopener">
-        <h3>Lo-fi Chill Generator</h3>
-        <p>環境音＆ローファイBGMジェネレーター</p>
-      </a>
-      <a class="card" href="https://system8bit.github.io/my-clicker/" target="_blank" rel="noopener">
-        <h3>My Clicker</h3>
-        <p>俺の筋トレクリッカーゲーム</p>
-      </a>
-    </div>
-  </main>
-  <footer>&copy; 2026 system8bit</footer>
+
+  <!-- ===== Marquee ===== -->
+  <div class="marquee-container">
+    <span class="marquee-text">★☆★ Welcome to system8bit's Homepage!! ★☆★ ようこそ！ゆっくりしていってね！ ★☆★</span>
+  </div>
+
+  <!-- ===== Title ===== -->
+  <div class="title-area">
+    <h1>☆ system8bit's Homepage ☆</h1>
+    <div class="subtitle">- Since 2026 -</div>
+    <div class="last-update">Last Update: 2026/03/19</div>
+  </div>
+
+  <!-- ===== Frame Layout ===== -->
+  <div class="frame-container">
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+      <div class="menu-title">M E N U</div>
+      <ul>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#tools">Tools</a></li>
+        <li><a href="#diary">Diary</a></li>
+        <li><a href="#bbs">BBS</a></li>
+        <li><a href="#link">Link</a></li>
+      </ul>
+      <div class="menu-icon">
+        <span style="font-size: 28px;">&#x1F30C;</span>
+        <a href="https://github.com/system8bit" target="_blank" rel="noopener" class="mail-link">GitHub</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+      <!-- Counter -->
+      <div class="counter">
+        <span class="counter-text">あなたは</span>
+        <span class="counter-num">000123</span>
+        <span class="counter-text">人目の訪問者です</span>
+      </div>
+
+      <!-- Profile -->
+      <div class="section" id="profile">
+        <h2>Profile</h2>
+        <table class="profile-table">
+          <tr><th>HN</th><td>system8bit</td></tr>
+          <tr><th>好きなもの</th><td>プログラミング / ツール作り</td></tr>
+          <tr><th>GitHub</th><td><a href="https://github.com/system8bit" target="_blank" rel="noopener">github.com/system8bit</a></td></tr>
+        </table>
+      </div>
+
+      <hr class="hr-retro">
+
+      <!-- Tools -->
+      <div class="section" id="tools">
+        <h2>Tools（自作ツール置き場）</h2>
+        <ul class="tools-list">
+          <li>
+            <a href="https://system8bit.github.io/lofi-generator/" target="_blank" rel="noopener">Lo-fi Chill Generator</a>
+            <span class="new-badge">NEW!</span>
+            <div class="tool-desc">環境音＆ローファイBGMジェネレーター。作業のお供にどうぞ。</div>
+          </li>
+          <li>
+            <a href="https://system8bit.github.io/qr-go/" target="_blank" rel="noopener">QR Go</a>
+            <div class="tool-desc">ブラウザで動くQRコード生成ツール。</div>
+          </li>
+          <li>
+            <a href="https://system8bit.github.io/password-generation/" target="_blank" rel="noopener">Password Generator</a>
+            <div class="tool-desc">安全なパスワードをサクッと生成。</div>
+          </li>
+          <li>
+            <a href="https://system8bit.github.io/my-clicker/" target="_blank" rel="noopener">My Clicker</a>
+            <span class="new-badge">NEW!</span>
+            <div class="tool-desc">俺の筋トレクリッカーゲーム。</div>
+          </li>
+        </ul>
+      </div>
+
+      <hr class="hr-retro">
+
+      <!-- Diary -->
+      <div class="section" id="diary">
+        <h2>Diary</h2>
+        <div class="construction">
+          <div class="construction-text">＊ 工事中 ＊</div>
+          <div class="construction-sub">Coming Soon... がんばって書きます（汗</div>
+        </div>
+      </div>
+
+      <hr class="hr-retro">
+
+      <!-- BBS -->
+      <div class="section" id="bbs">
+        <h2>BBS（掲示板）</h2>
+        <div class="construction">
+          <div class="construction-text">＊ 工事中 ＊</div>
+          <div class="construction-sub">設置準備中です。しばらくお待ちください m(_ _)m</div>
+        </div>
+      </div>
+
+      <hr class="hr-retro">
+
+      <!-- Link -->
+      <div class="section" id="link">
+        <h2>Link</h2>
+        <p style="font-size: 12px; color: #999999; margin-bottom: 8px;">リンクフリーです。ご自由にどうぞ！</p>
+        <ul class="link-list">
+          <li><a href="https://github.com/system8bit" target="_blank" rel="noopener">GitHub - system8bit</a></li>
+        </ul>
+        <div class="construction" style="margin-top: 16px;">
+          <div class="construction-text" style="font-size: 14px;">＊ リンク募集中 ＊</div>
+        </div>
+      </div>
+
+    </div><!-- /main-content -->
+  </div><!-- /frame-container -->
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2026 system8bit. All Rights Reserved.<br>
+    このサイトは1024x768以上の解像度で最適にご覧いただけます。
+  </footer>
+
 </body>
 </html>
