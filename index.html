@@ -1,1 +1,98 @@
-Test
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>system8bit - Portfolio</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #0d1117;
+      color: #e6edf3;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+    header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 12px;
+    }
+    header p {
+      color: #8b949e;
+      font-size: 1.1rem;
+    }
+    header a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    header a:hover { text-decoration: underline; }
+    main {
+      width: 100%;
+      max-width: 720px;
+      padding: 0 20px 80px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #21262d;
+    }
+    .tools {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 8px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s;
+    }
+    .card:hover { border-color: #58a6ff; }
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: #58a6ff;
+    }
+    .card p {
+      color: #8b949e;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    footer {
+      margin-top: auto;
+      padding: 24px;
+      color: #484f58;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>system8bit</h1>
+    <p><a href="https://github.com/system8bit" target="_blank" rel="noopener">GitHub</a></p>
+  </header>
+  <main>
+    <h2>Tools</h2>
+    <div class="tools">
+      <a class="card" href="https://system8bit.github.io/password-generation/" target="_blank" rel="noopener">
+        <h3>Password Generator</h3>
+        <p>パスワード生成ツール</p>
+      </a>
+      <a class="card" href="https://system8bit.github.io/qr-go/" target="_blank" rel="noopener">
+        <h3>QR Go</h3>
+        <p>QRコード生成ツール</p>
+      </a>
+    </div>
+  </main>
+  <footer>&copy; 2026 system8bit</footer>
+</body>
+</html>
